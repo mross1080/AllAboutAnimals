@@ -12,23 +12,11 @@ exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
-// exports.newValue = function(req, res){
+exports.articles = function(req, res){
+	res.render('articles',{title: 'Articles'})
+};
 
-// 	var record = new valuesSchema({
-// 	name: "test"
-// })
 
-// 	record.save(function(err) {
-// 				if (err) {
-// 					console.log(err);
-// 					res.status(500).json({status: 'failure'});
-// 				} else {
-// 					res.json({status: 'success'});
-// 				}
-// 			});
-
-// 	res.json({status: record});
-// }
 
 exports.applications= function(req, res){
 	//console.log(jobSchema.find());
