@@ -1,0 +1,38 @@
+extends layout
+
+block content
+	h1 #{title}
+	form(action="/guesstheanimal", method="post")
+		.question
+			.col-md-2
+			h3 1. What bird am I!
+			.row
+				img(class="col-xs-10 col-sm-10 col-md-8 col-md-offset-2 img-thumbnail guessgameimg" src="https://s3-eu-west-1.amazonaws.com/allaboutanimals/images/duck.jpg")
+			.row
+				.col-md-2
+				.ans.col-xs-6.col-sm-3
+					input#problem1(type='radio', name='answer1', value='Duck')
+					label(for='problem1') I'm a Duck!
+				.col-xs-2.col-sm-2
+					p Or
+				.ans.col-xs-6.col-sm-3
+					input#problem1(type='radio', name='answer1', value='Eagle')
+					label(for='problem1') I'm an Eagle!
+		.question
+			.col-md-2
+			h3 2. I sure can run fast, what's my name!
+			.row
+				img(class="col-xs-10 col-sm-10 col-md-8 col-md-offset-2 img-thumbnail guessgameimg" src="https://s3-eu-west-1.amazonaws.com/allaboutanimals/images/horse.jpg")
+			.row
+				.col-md-2
+				.ans.col-xs-6.col-sm-3
+					input#problem1(type='radio', name='answer2', value='Horse')
+					label(for='problem1') I'm a Horse!
+				.col-xs-2.col-sm-2
+					p Or
+				.ans.col-xs-6.col-sm-3
+					input#problem1(type='radio', name='answer2', value='Zebra')
+					label(for='problem1') I'm a Zebra!
+			.col-md-1
+			.col-md-10
+				input(class="btn btn-success form-control" type="submit" value="Submit")

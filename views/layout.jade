@@ -7,18 +7,17 @@ html
   body
     header
       .row
-        .col-md-12
-          .col-xs-4.col-md-2.col-l-4.col-xl-4
-            a(href="/" class="thumbnail")
-              img(src="http://www.mikebirkhead.com/images/EyeForAnElephant.jpg")
-          .col-xs-6.col-md-4.col-l-4.col-xl-4
-            #siteTitle
-              #title
-                p All About Animals
-              h3 Piecing together the animal kingdom!
+        .col-xs-4.col-md-3.col-md-offset-2.col-l-4.col-xl-4
+          a(href="/" class="")
+            img(id="thumb" src="https://s3-eu-west-1.amazonaws.com/allaboutanimals/images/logo.png")
+        .col-xs-6.col-md-4.col-l-4.col-xl-4
+          #siteTitle
+            #title
+              p All About Animals
+            h3 Piecing together the animal kingdom!
     nav.navbar.navbar-static-top.menubar
-      .col-md-10
-        .container
+      .container
+        .col-md-10
           .nav-bar-header
           div#navbar
             ul.nav.navbar-nav
@@ -41,18 +40,19 @@ html
         block content
     footer
       nav.navbar.navbar-static-top.menubar
-        .nav-bar-header
-        div#navbar
-          ul.nav.navbar-nav
-            li.menu
-              a(class = "menu" href='#') Home Page
-            li
-              a(class = "menu" href='#about') Site Map
-            li
-              a(class = "menu" href='#contact') Our Mission
-            li.menu
-              a(class = "menu" href='#') Contact Us
-            li
-              a(class = "menu" href='#about') Other Helpful Sites
-            li
-              a(class = "menu" href='#contact') Parent Reviews
+        .container
+          .nav-bar-header
+          div#navbar
+            ul.nav.navbar-nav
+              li.menu
+                a(class = "menu" href='#') Home Page
+              li
+                a(class = "menu" href='#about') Site Map
+              li
+                a(class = "menu" href='#contact') Our Mission
+              li.menu
+                a(class = "menu" href='#') Contact Us
+              li
+                a(class = "menu" href='#about') Other Helpful Sites
+              li
+                a(class = "menu" href='#contact') Parent Reviews

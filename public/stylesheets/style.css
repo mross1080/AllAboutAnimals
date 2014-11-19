@@ -5,6 +5,9 @@ body {
   font-family:
 }
 
+#thumb{
+	height: 200px;
+}
 header{
 	background-color: rgb(216, 239, 245);
 	color: rgb(27,20,100);
@@ -22,8 +25,9 @@ header{
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 10px;
-	height: 500px;
+	/*height: 1000px;*/
 	background-color: rgb(216, 239, 245);
+	padding: 20px;
 }
 
 .menu{
@@ -33,6 +37,10 @@ header{
 	border-right: 2px solid white;
 }
 
+.question{
+	margin-bottom: 20px;
+}
+
 .menubar{
   background-color: rgb(27,20,100);
 }
@@ -40,3 +48,33 @@ header{
 footer{
 	margin-top: 10px;
 }
+
+.guessgameimg{
+
+	height: 300px;
+	/*border: 1px solid black;*/
+}
+
+.main-page-img{
+	height: 200px;
+}
+
+.box {
+	  margin-top: 30px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #009933;
+    text-align: center;
+}
+.answer {position:absolute;}
+
+.answer input {visibility:hidden; width:0;}
+
+.answer label:hover {font-weight:bold}
+
+.answer input:checked + label {font-weight:bold; text-transform:uppercase}
+
+
+
+

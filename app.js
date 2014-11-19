@@ -34,6 +34,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 //app.get('/users', user.list);
 // app.post('/newJob',routes.newJob);
+app.get('/guesstheanimal', routes.guesstheanimal);
+app.post('/guesstheanimal', routes.guesstheanimalsubmit);
 app.get('/articles', routes.articles);
 app.get('/applications', routes.applications);
 
