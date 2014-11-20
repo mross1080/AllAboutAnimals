@@ -17,12 +17,12 @@ html
             h3 Piecing together the animal kingdom!
     nav.navbar.navbar-static-top.menubar
       .container
-        .col-md-10
+        .col-md-offset-2.col-md-10
           .nav-bar-header
           div#navbar
             ul.nav.navbar-nav
               li
-                a(class = "menu" href='/') Quizzes
+                a(style="border-left: 2px solid white" class = "menu" href='/') Quizzes
               li
                 a(class = "menu" href='/articles') Articles
               li
@@ -30,10 +30,7 @@ html
               li
                 a(class = "menu" href='#contact') Parents
               li
-                p(class = "navbar-text menu") Search
-            .navbar-form.navbar-left
-              .form-group
-                input(type="text" class="form-control" label="Search")
+                a(class = "menu" href="#") Search
           
     .container
       .wrapper
@@ -41,18 +38,19 @@ html
     footer
       nav.navbar.navbar-static-top.menubar
         .container
-          .nav-bar-header
-          div#navbar
-            ul.nav.navbar-nav
-              li.menu
-                a(class = "menu" href='#') Home Page
-              li
-                a(class = "menu" href='#about') Site Map
-              li
-                a(class = "menu" href='#contact') Our Mission
-              li.menu
-                a(class = "menu" href='#') Contact Us
-              li
-                a(class = "menu" href='#about') Other Helpful Sites
-              li
-                a(class = "menu" href='#contact') Parent Reviews
+          .col-md-offset-1.col-md-10
+            .nav-bar-header
+            div#navbar
+              ul.nav.navbar-nav
+                li.menu
+                  a(class = "menu" href='#') Home Page
+                li
+                  a(class = "menu" href='#about') Site Map
+                li
+                  a(class = "menu" href='#contact') Our Mission
+                li.menu
+                  a(class = "menu" href='#') Contact Us
+                li
+                  a(class = "menu" href='#about') Other Helpful Sites
+                li
+                  a(class = "menu" href='#contact') Parent Reviews

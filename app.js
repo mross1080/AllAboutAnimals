@@ -7,8 +7,8 @@
 
 var express = require('express');
 var routes = require('./routes');
-//var MongoStore = require('connect-mongo')(express);
-//var user = require('./routes/user');
+var MongoStore = require('connect-mongo')(express);
+// var article = require('./routes/user');
 var http = require('http');
 var path = require('path');
 
@@ -34,10 +34,22 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 //app.get('/users', user.list);
 // app.post('/newJob',routes.newJob);
+app.post('/articleform', routes.createarticle);
+app.get('/articleform', routes.articleform);
+app.get('/article/:name', routes.article);
+app.get('/test/:name', routes.test);
+app.get('/create', routes.create);
+app.get('/quiz1', routes.quiz1);
+app.get('/helpfulsites', routes.helpfulsites);
+app.get('/polarbears', routes.polarbears);
+app.get('/turtles', routes.turtles);
+app.get('/lions', routes.lions);
+app.get('/elephants', routes.elephants);
 app.get('/guesstheanimal', routes.guesstheanimal);
 app.post('/guesstheanimal', routes.guesstheanimalsubmit);
 app.get('/articles', routes.articles);
-app.get('/applications', routes.applications);
+app.get('/dropdatabase', routes.drop);
+app.get('/list', routes.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

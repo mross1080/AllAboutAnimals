@@ -33,8 +33,12 @@ header{
 .menu{
 	color: white;
 	font-size: 18px;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
+	/*margin-right: 10px;*/
+	/*padding-right: 50px;*/
 	border-right: 2px solid white;
+	/*padding-left: 50px;*/
+
 }
 
 .question{
@@ -56,7 +60,7 @@ footer{
 }
 
 .main-page-img{
-	height: 200px;
+	height: 150px;
 }
 
 .box {
@@ -66,6 +70,7 @@ footer{
     border-radius: 10px;
     background: #009933;
     text-align: center;
+    text-decoration: none;
 }
 .answer {position:absolute;}
 

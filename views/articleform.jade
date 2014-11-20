@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.row
+		.col-xs-12.col-sm-12.col-md-12
+			.panel.panel-default
+				.panel-body
+					form(action="/articleform", method="post")
+						.row
+							.col-md-3
+								input(name = "title" class ="form-control input-sm" type="text", placeholder="Title")
+							.col-md-3
+								input(name = "source" class ="form-control input-sm" type="text", placeholder="Article Source")
+							.col-md-3
+								input(name = "imgsrc" class ="form-control input-sm" type="text", placeholder="Image Source")
+						.row
+							.col-md-10
+								input(name = "paragraph1" class ="form-control input-sm" type="text", placeholder="First Paragraph")
+						.row
+							.col-md-10
+								input(name = "paragraph2" class ="form-control input-sm" type="text", placeholder="Second Paragraph")
+						.row
+							.col-md-8.col-md-offset-2
+								input(class="btn btn-success form-control" type="submit" value="Submit")
