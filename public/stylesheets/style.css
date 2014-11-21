@@ -5,6 +5,10 @@ body {
   font-family:
 }
 
+.text{
+	color: black;
+}
+
 #thumb{
 	height: 200px;
 }
@@ -31,6 +35,7 @@ header{
 }
 
 .menu{
+	text-align: center;
 	color: white;
 	font-size: 18px;
 	/*margin-left: 10px;*/
@@ -38,6 +43,7 @@ header{
 	/*padding-right: 50px;*/
 	border-right: 2px solid white;
 	/*padding-left: 50px;*/
+	width: 150px;
 
 }
 

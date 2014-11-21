@@ -1,6 +1,13 @@
 extends layout
 
 block content
+	.col-md-2
+		ol(class="breadcrumb")
+			li
+				a(href="/") Home
+			li
+				a(href="/quizlist") Quizzes
+	br
 	h1 #{title}
 	form(action="/quiz", method="post")
 		each val,index in questions.question
