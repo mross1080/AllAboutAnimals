@@ -3,58 +3,18 @@ extends layout
 block content
   h1
     | Site Map
-  .col-sm-4.col-sm-offset-1.col-md-4.col-md-offset-1.col-xs-8.col-xs-offset-2
-    .text
-      a(href='/')
-        h3 Quizzes
-      ul.quizzes
-        li
-          a(href='/') Quiz1
-        li
-          a(href='/') Quiz2
-        li
-          a(href='/') Quiz3
-        li
-          a(href='/') Quiz4
-  .col-sm-4.col-sm-offset-2.col-md-4.col-md-offset-2.col-xs-8.col-xs-offset-2
-    .text
-      a(hred='/')
-        h3 Articles
-      ul.articles
-        li
-          a(href='/') Article1
-        li
-          a(href='/') Article2
-        li
-          a(href='/') Article3
-        li
-          a(href='/') Article4
-  .col-md-1
   .row
     .col-sm-4.col-sm-offset-1.col-md-4.col-md-offset-1.col-xs-8.col-xs-offset-2
       .text
+        a(href='/quizlist')
+          h3 Quizzes
+        a(href='/articles')
+          h3 Articles
         a(href='/')
-          h3 Games
-        ul.games
-          li
-            a(href='/') Game1
-          li
-            a(href='/') Game2
-          li
-            a(href='/') Game3
-          li
-            a(href='/') Game4
-    .col-sm-4.col-sm-offset-2.col-md-4.col-md-offset-2.col-xs-8.col-xs-offset-2
-      .text
-        a(href='/')
-          h3 Parents
-        ul.parents
-          li
-            a(href='/') Parent1
-          li
-            a(href='/') Parent2
-          li
-            a(href='/') Parent3
-          li
-            a(href='/') Parent4
-    .col-md-1
+          h3 Reviews
+        a(href='/admin')
+          h3 Adminstration
+        a(href='/mission')
+          h3 Our Mission
+        a(href='/search')
+          h3 Search
