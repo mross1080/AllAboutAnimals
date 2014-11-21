@@ -173,17 +173,23 @@ exports.searchpage= function(req, res){
 }
 
 exports.search= function(req, res){
-	if(req.body.search == "quiz"){
-		Quiz.find({}, function(err,docs){
-		res.json(docs);
-	})
-	} else{
+
+	var results = [];
+	var query = req.body.Query
+
 		Article.find({}, function(err,docs){
-		res.json(docs);
+						console.log(docs);
+		for(var x=0; x < docs.length; x++){
+				console.log("current object is " + docs[x]) 
+					if(docs[x].title== query || mentioned(docs[x].paragraph1,query)){
+						results.push(docs[x].title);
+					}
+			}
+		res.render("searchresults", {results:results});
 	})
 	console.log(req.body);
 }
-}
+
 
 exports.list = function(req, res){
 	Quiz.find({}, function(err,docs){
@@ -202,4 +208,14 @@ exports.drop = function(req, res){
 	})
 }
 
+function mentioned(paragraph, str){
+	var current = paragraph.split(" ");
+	console.log(current);
+	for(var x=0; x < current.length; x++){
+		if(current[x] == str){
+			return true;
+		}
+	}
+	return false;
+}
 

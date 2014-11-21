@@ -29,7 +29,6 @@ header{
 	background-color: white;
 	border: 1px solid white;
 	border-radius: 10px;
-	/*height: 1000px;*/
 	background-color: rgb(216, 239, 245);
 	padding: 20px;
 }
@@ -38,11 +37,7 @@ header{
 	text-align: center;
 	color: white;
 	font-size: 18px;
-	/*margin-left: 10px;*/
-	/*margin-right: 10px;*/
-	/*padding-right: 50px;*/
 	border-right: 2px solid white;
-	/*padding-left: 50px;*/
 	width: 150px;
 
 }
@@ -64,9 +59,7 @@ footer{
 }
 
 .guessgameimg{
-
 	height: 300px;
-	/*border: 1px solid black;*/
 }
 
 #resultsText{
@@ -86,13 +79,7 @@ footer{
     text-align: center;
     text-decoration: none;
 }
-.answer {position:absolute;}
 
-.answer input {visibility:hidden; width:0;}
-
-.answer label:hover {font-weight:bold}
-
-.answer input:checked + label {font-weight:bold; text-transform:uppercase}
 
 
 

@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1 Results
+	for val in results
+		a(href="/article/#{val.title}") #{val.title}
+		

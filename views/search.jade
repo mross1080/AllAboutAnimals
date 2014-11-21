@@ -3,15 +3,7 @@ extends layout
 block content
 	form(action="/search", method="post")
 		.row
-			input(type="text", name="Query", placeholder="Search", class="form-control")
-		.row
-			.col-xs-6.col-sm-3
-				input#problem1(type='radio', name='search', value='quiz')
-				label(for='problem1') Search For Quizzes
-			.col-xs-2.col-sm-2
-			.ans.col-xs-6.col-sm-3
-				input#problem1(type='radio', name='search', value='article')
-				label(for='problem1') Search For Articles
+			input(type="text", name="Query", placeholder="Search for an Article", class="form-control")
 			.row
 				.col-md-8.col-md-offset-2
 			input(class="btn btn-success form-control" type="submit" value="Submit")
