@@ -93,6 +93,9 @@ new Quiz({
 
 }
 
+exports.contactus= function(req, res){
+	res.render('contactus');
+}
 exports.articleform = function(req, res){
 	res.render('articleform');
 }

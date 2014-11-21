@@ -30,6 +30,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/contactus', routes.contactus)
 app.get('/', routes.index);
 app.get('/mission', routes.mission);
 app.get('/quizlist', routes.quizlist);
