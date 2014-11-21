@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	.row
+		.col-xs-12.col-sm-12.col-md-12
+			.panel.panel-default
+				.panel-body
+					form(action="/review", method="post")
+						.row
+							.col-md-5
+								input(name = "Title" class ="form-control input-sm" type="text", placeholder="Title")
+							.col-md-5
+								input(name = "Author" class ="form-control input-sm" type="text", placeholder="Author")
+						.row
+							.col-md-10
+								input(name = "Content" class ="form-control input-sm" type="text", placeholder="What do you have to say?")
+						.row
+							.col-md-8.col-md-offset-2
+								input(class="btn btn-success form-control" type="submit" value="Submit")

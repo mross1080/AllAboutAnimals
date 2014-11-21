@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+	h1 All Parent Reviews
+	a(href='/reviewform') Write your own review!
+	each review in reviews
+		.review
+			h2 #{review.Title} 
+			h3 by #{review.Author}
+			p #{review.Content}

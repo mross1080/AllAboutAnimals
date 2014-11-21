@@ -50,6 +50,10 @@ app.get('/drop', routes.drop);
 app.get('/list', routes.list);
 app.get('/search', routes.searchpage);
 app.post('/search', routes.search);
+app.get('/sitemap', routes.sitemap);
+app.get('/reviewform',routes.reviewform)
+app.post('/review',routes.createreview);
+app.get('/allreviews',routes.allreviews);
 
 
 http.createServer(app).listen(app.get('port'), function(){

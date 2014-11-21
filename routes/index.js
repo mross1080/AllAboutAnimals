@@ -20,9 +20,42 @@ var Article     = mongoose.model( 'Article' );
 var quizSchema = require('../schemas/quiz')
 var Quiz = mongoose.model('Quiz');
 
+var reviewSchema = require('../schemas/review')
+var Review = mongoose.model('Review');
+
 
 exports.admin= function(req, res){
 	res.render('admin');
+}
+
+exports.reviewform= function(req, res){
+	res.render('reviewform');
+}
+
+exports.allreviews= function(req,res){
+
+	Review.find({}, function (err, docs) {
+		console.log(docs);
+
+          res.render( 'allreviews' , {reviews: docs} );
+
+        });
+
+
+}
+
+exports.createreview = function(req, res){
+console.log(req.body);
+	new Review({
+  	Content: req.body.Content,
+  	Author: req.body.Author,
+  	Title: req.body.Title
+
+  }).save( function( err, quiz, count ){
+  	console.log(quiz);
+  	console.log("Quiz created");
+    res.redirect( '/allreviews');
+  });
 }
 
 exports.quizform = function(req, res){
@@ -72,6 +105,9 @@ exports.quiz1 = function(req, res){
   res.render('quiz1', { title: 'Quiz 1' });
 };
 
+exports.sitemap = function(req, res){
+	res.render('sitemap');
+}
 
 exports.index = function(req, res){
   res.render('index', { title: 'All About Animals' });
@@ -203,7 +239,7 @@ exports.update = function(req, res){
 }
 
 exports.drop = function(req, res){
-	Quiz.remove({}, function(err,docs){
+	Review.remove({}, function(err,docs){
 		console.log("Quizzes Dropped")
 	})
 }
