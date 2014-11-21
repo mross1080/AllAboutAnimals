@@ -1,0 +1,25 @@
+extends layout
+
+block content
+	h1 #{title}
+	form(action="/quiz", method="post")
+		each val,index in questions.question
+			.question
+				.col-md-2
+				h3 #{val.question}
+				.row
+					img(class="col-xs-10 col-sm-10 col-md-8 col-md-offset-2 img-thumbnail guessgameimg" src="#{val.img}")
+				.row
+					.col-md-2
+					.ans.col-xs-6.col-sm-3
+						input#problem1(type='radio', name='answer#{index}', value='#{val.a}')
+						label(for='problem1') #{val.a}
+					.col-xs-2.col-sm-2
+						p Or
+					.ans.col-xs-6.col-sm-3
+						input#problem1(type='radio', name='answer#{index}', value='#{val.b}')
+						label(for='problem1') #{val.b}
+		.row
+			.col-md-8.col-md-offset-2
+				input(type="hidden", name="answers",value="#{questions.answers}")
+				input(class="btn btn-success form-control" type="submit" value="Submit")

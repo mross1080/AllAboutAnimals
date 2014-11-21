@@ -33,22 +33,24 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 //app.get('/users', user.list);
-// app.post('/newJob',routes.newJob);
+app.get('/quizlist', routes.quizlist);
+app.get('/admin', routes.admin);
+app.post('/quiz', routes.gradequiz);
+app.get('/quiz/:name', routes.quiz);
+app.post('/quizform', routes.createquiz);
+app.get('/quizform', routes.quizform);
 app.post('/articleform', routes.createarticle);
 app.get('/articleform', routes.articleform);
 app.get('/article/:name', routes.article);
-app.get('/test/:name', routes.test);
+
 app.get('/create', routes.create);
 app.get('/quiz1', routes.quiz1);
 app.get('/helpfulsites', routes.helpfulsites);
-app.get('/polarbears', routes.polarbears);
-app.get('/turtles', routes.turtles);
-app.get('/lions', routes.lions);
-app.get('/elephants', routes.elephants);
+app.get('/update', routes.update);
 app.get('/guesstheanimal', routes.guesstheanimal);
 app.post('/guesstheanimal', routes.guesstheanimalsubmit);
 app.get('/articles', routes.articles);
-app.get('/dropdatabase', routes.drop);
+app.get('/drop', routes.drop);
 app.get('/list', routes.list);
 
 http.createServer(app).listen(app.get('port'), function(){

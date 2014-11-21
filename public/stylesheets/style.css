@@ -41,6 +41,10 @@ header{
 
 }
 
+.questionform{
+	border: 1px solid white;
+	margin: 20px;
+}
 .question{
 	margin-bottom: 20px;
 }
@@ -57,6 +61,10 @@ footer{
 
 	height: 300px;
 	/*border: 1px solid black;*/
+}
+
+#resultsText{
+	text-align: center;
 }
 
 .main-page-img{

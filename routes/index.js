@@ -16,22 +16,53 @@ var db = require('../db');
  var mongoose = require('mongoose');
 var articleSchema = require('../schemas/article');
 var Article     = mongoose.model( 'Article' );
-var jobSchema = require('../schemas/job');
-var valuesSchema = require('../schemas/values');
+
+var quizSchema = require('../schemas/quiz')
+var Quiz = mongoose.model('Quiz');
 
 
-exports.test= function(req, res){
-	console.log(req.params);
-	res.render('index', { title: 'All About Animals' });
+exports.admin= function(req, res){
+	res.render('admin');
+}
+
+exports.quizform = function(req, res){
+	res.render('quizform');
+}
+
+exports.quizlist = function(req, res){
+	res.render('quizlist');
+}
+
+exports.createquiz = function(req,res){
+	console.log(req.body)
+	var questions = [];
+	var answers = [];
+	questions.push(req.body.Question1);
+	questions.push(req.body.Question2);
+	questions.push(req.body.Question3);
+	questions.push(req.body.Question4);
+	answers.push(req.body.answer1);
+	answers.push(req.body.answer2);
+	answers.push(req.body.answer3);
+	answers.push(req.body.answer4);
+
+	console.log(answers);
+new Quiz({
+  	question: questions,
+  	answers: answers,
+  	title: req.body.title
+
+  }).save( function( err, quiz, count ){
+  	console.log(quiz);
+  	console.log("Quiz created");
+    res.redirect( '/');
+  });
+
 }
 
 exports.articleform = function(req, res){
 	res.render('articleform');
 }
-
-exports.elephants = function(req, res){
-  res.render('elephants', { title: 'Elephants' });
-};
 
 exports.helpfulsites = function(req, res){
   res.render('helpfulsites', { title: 'Other Helpful Sites' });
@@ -41,17 +72,6 @@ exports.quiz1 = function(req, res){
   res.render('quiz1', { title: 'Quiz 1' });
 };
 
-exports.turtles = function(req, res){
-  res.render('turtles', { title: 'Turtles' });
-};
-
-exports.lions = function(req, res){
-  res.render('lions', { title: 'Lions' });
-};
-
-exports.polarbears = function(req, res){
-  res.render('polarbears', { title: 'Polar Bears' });
-};
 
 exports.index = function(req, res){
   res.render('index', { title: 'All About Animals' });
@@ -102,6 +122,45 @@ exports.article = function(req, res){
         });
 }
 
+exports.quiz = function(req, res){
+	var name = req.params.name;
+	console.log(name);
+	Quiz.find({ title: name}, function (err, docs) {
+		console.log(docs);
+		var current = docs[0];
+            console.log("Current object is " + current);
+            console.log(current.question)
+            // console.log("Current title is " + current.title)
+          res.render( 'Quiz' , {questions: current} );
+
+
+        });
+}
+
+exports.gradequiz = function(req, res){
+	console.log(req.body);
+	var correctAnswers = req.body.answers.split(",")
+	var choices =[];
+	var correctAnswersCount= 0;
+	var message ="Try again";
+
+	console.log(req.body);
+	choices.push(req.body.answer0);
+	choices.push(req.body.answer1);
+	choices.push(req.body.answer2);
+	choices.push(req.body.answer3);
+
+	for(var x=0; x < correctAnswers.length; x++ ){
+		if(choices[x] == correctAnswers[x]){
+			correctAnswersCount++;
+		}
+	}
+
+	console.log("Number of correctAnswers" + correctAnswersCount);
+
+	res.render( 'quizresults', {count: correctAnswersCount});
+}
+
 exports.create = function ( req, res ){
 	console.log("creating new article");
   new Article({
@@ -133,10 +192,20 @@ exports.createarticle = function ( req, res ){
 };
 
 exports.list = function(req, res){
-	Article.find({}, function(err,docs){
+	Quiz.find({}, function(err,docs){
 		res.json(docs);
 	})
 }
 
-
+exports.update = function(req, res){
+	Quiz.update({_id: "546e4ac1e571f2922e2eb9fc"}, {$set: {title: "Quiz1"}})
+	console.log("collection updated");
 }
+
+exports.drop = function(req, res){
+	Quiz.remove({}, function(err,docs){
+		console.log("Quizzes Dropped")
+	})
+}
+
+

@@ -1,0 +1,68 @@
+extends layout
+
+block content
+	.row
+		.col-xs-12.col-sm-12.col-md-12
+			.panel.panel-default
+				.panel-body
+					form(action="/quizform", method="post")
+						.row
+							.col-md-10.col-md-offset-1
+									input(name = "title" class ="form-control input-sm" type="text", placeholder="Quiz Title")
+						.questionform
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question1[question]" class ="form-control input-sm" type="text", placeholder="First Question")
+							.row
+								.col-md-3.col-md-offset-1
+									input(name = "Question1[a]" class ="form-control input-sm" type="text", placeholder="Answer 1")
+								.col-md-3
+									input(name = "Question1[b]" class ="form-control input-sm" type="text", placeholder="Answer 2")
+								.col-md-3
+									input(name = "answer1" class ="form-control input-sm" type="text", placeholder="Correct Answer")
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question1[img]" class ="form-control input-sm" type="text", placeholder="Image for Question 1")
+						.questionform
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question2[question]" class ="form-control input-sm" type="text", placeholder="Second Question")
+							.row
+								.col-md-3.col-md-offset-1
+									input(name = "Question2[a]" class ="form-control input-sm" type="text", placeholder="Answer 1")
+								.col-md-3
+									input(name = "Question2[b]" class ="form-control input-sm" type="text", placeholder="Answer 2")
+								.col-md-3
+									input(name = "answer2" class ="form-control input-sm" type="text", placeholder="Correct Answer")
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question2[img]" class ="form-control input-sm" type="text", placeholder="Image for Question 2")
+						.questionform
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question3[question]" class ="form-control input-sm" type="text", placeholder="Third Question")
+							.row
+								.col-md-3.col-md-offset-1
+									input(name = "Question3[a]" class ="form-control input-sm" type="text", placeholder="Answer 1")
+								.col-md-3
+									input(name = "Question3[b]" class ="form-control input-sm" type="text", placeholder="Answer 2")
+								.col-md-3
+									input(name = "answer3" class ="form-control input-sm" type="text", placeholder="Correct Answer")
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question3[img]" class ="form-control input-sm" type="text", placeholder="Image for Question 3")
+						.questionform
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question4[question]" class ="form-control input-sm" type="text", placeholder="Fourth Question")
+							.row
+								.col-md-3.col-md-offset-1
+									input(name = "Question4[a]" class ="form-control input-sm" type="text", placeholder="Answer 1")
+								.col-md-3
+									input(name = "Question4[b]" class ="form-control input-sm" type="text", placeholder="Answer 2")
+								.col-md-3
+									input(name = "answer4" class ="form-control input-sm" type="text", placeholder="Correct Answer")
+							.row
+								.col-md-10.col-md-offset-1
+									input(name = "Question4[img]" class ="form-control input-sm" type="text", placeholder="Image for Question 4")
+						input(class="btn btn-success form-control" type="submit" value="Submit")
